@@ -1,0 +1,14 @@
+version: '3.2'
+services:
+  antmedia:
+    container_name: antmedia
+    cap_add:
+      - "DAC_READ_SEARCH"
+    build:
+      context: .
+      args:
+        AntMediaServer: "ant-media-server-enterprise-latest.zip"
+    ports:
+      - "5443:5443"
+      - "1935:1935"
+      - "5080:5080"
